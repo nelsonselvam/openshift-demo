@@ -2,10 +2,12 @@ package com.openshift.demo.controller;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonInclude;
+import com.fasterxml.jackson.annotation.JsonInclude.Include;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
-import com.fasterxml.jackson.annotation.JsonInclude.Include;
 
+@JsonInclude(Include.NON_NULL)
+@JsonPropertyOrder({"bookMessage","bookId","bookName","author(s)"})
 public class Book {
 
 	/** The book name. */
