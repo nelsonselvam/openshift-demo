@@ -13,10 +13,16 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.util.StringUtils;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestHeader;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 public class OpenShiftControllerDemo {
+	
+	@RequestMapping("/")
+    public String index() {
+        return "App Deployed successfully!";
+    }
 	
 	@GetMapping("/book")
 	public ResponseEntity<Response> getBookSuggestion() {
