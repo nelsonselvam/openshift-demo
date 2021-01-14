@@ -19,8 +19,10 @@ import org.springframework.web.bind.annotation.RestController;
 public class OpenShiftControllerDemo {
 	
 	@GetMapping("/book")
-	public ResponseEntity<Response> getBookSuggestion(@RequestHeader String name) {
+	public ResponseEntity<Response> getBookSuggestion() {
 
+		String name = "Reader";
+		
 		Optional<Book> bookSuggestion = getBooks().stream().filter(predicate -> predicate.getBookId() == getRandom())
 				.findFirst();
 		ServiceMessage serviceMessage = new ServiceMessage();
